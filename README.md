@@ -8,7 +8,7 @@ The internal json rest api can be hosted locally using the following commands:
 ```shell
 $ npm install -g json-server
 
-$ json-server --watch db/db.json
+$ json-server --watch db.json
 ```
 
 ## 1. Develop a basic reporting portal using any frameworks you see fit for purpose.
