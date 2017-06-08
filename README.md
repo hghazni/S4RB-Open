@@ -55,3 +55,6 @@ Should be displayed as:
 |01 April 2012|	0.00000|
 |01 June 2012|	93.67857009|
 |01 July 2012|	57.29516406|
+
+# The Test #
+Hopefully, completing the test itself shouldn’t be too difficult to complete, but what we are looking for here is you approach the project, the tests put in place, the structure of the code etc… You should approach this as if it were part of much bigger interconnected project. There are no prizes for finishing quickly.
