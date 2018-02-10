@@ -1,16 +1,15 @@
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
+  <h1 class="thin">
+    Complaints Per Million Units App for
   </h1>
-  <img width="300" alt="S4RB Logo" src="assets/s4rb_logo.png">
-</div>
-<h2>By Haroon Ghazni </h2>
-
-<button (click)="getPosts()">Get Complaints</button>
-
-<div *ngFor="let post of posts | async">
-
-  {{ post | json }}
-
+  <img width="300" alt="S4RB Logo" class="animated bounceIn" src="assets/s4rb_logo.png">
+  <h2>By Haroon Ghazni </h2>
+  <!--Gets JSON REST Data-->
+  <button class="waves-effect waves-light btn-large" (click)="getPosts()">Get Complaints</button>
 </div>
 
+<div class="CPMU__container container">
+  <div *ngFor="let post of posts | async" class="animated fadeInDown">
+        {{ post | json }}
+  </div>
+</div>
