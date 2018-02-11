@@ -4,11 +4,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
+import { CpmuComponent } from './cpmu/cpmu.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    CpmuComponent,
   ],
   imports: [
     BrowserModule,
