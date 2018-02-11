@@ -3,7 +3,7 @@ import { Http, Response } from '@angular/http';
 
 import { Component } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Config } from 'config/Config';
+import { Config } from './Config';
 import { Post } from './cpmu/cpmu.component';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
