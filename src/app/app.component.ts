@@ -3,10 +3,11 @@ import { Http, Response } from '@angular/http';
 
 import { Component } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { CoreValues } from 'CoreValues';
+import { Config } from 'config/Config';
 import { Post } from './cpmu/cpmu.component';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import { ComplaintsService } from './services/complaints.service';
 
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/retry';
@@ -24,20 +25,10 @@ export class AppComponent {
 
   constructor(public http: HttpClient) {}
 
-  // Gets CPMU JSON data from CoreValues
+  // Gets CPMU JSON data from Config.ts
   getPosts() {
     // Getting a new instance of the class to accommodate for dynamic parameters in the future
     let params = new HttpParams().set('Quarter', '1');
-    this.posts = this.http.get(CoreValues.dbURL + '/CPMU' , { params });
-  }
-}
-
-@Injectable()
-export class displayMonthlyCPMU {
-  constructor(private _http: Http) {
-    displayMonthlyCPMU () {
-      return this._http.get(this.url)
-          .map((response: Response) => response.json());
-    }
+    this.posts = this.http.get(Config.dbURL + '/CPMU' , { params });
   }
 }
