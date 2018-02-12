@@ -28,6 +28,7 @@ export class ApiService {
           .catch(this.handleError);
   }
 
+// Error Handler
 private handleError(error: Response) {
     return Observable.throw(error.statusText);
 }

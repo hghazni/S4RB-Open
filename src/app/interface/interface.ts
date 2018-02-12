@@ -3,4 +3,5 @@ export class ComplaintInterface {
     Month: string;
     Complaints: number;
     UnitsSold: number;
+    public CPMU: number;
 }

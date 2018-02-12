@@ -36,7 +36,7 @@ export class ComplaintsComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.getQuarterlyCPMU();
+    this.getMonthlyCPMU();
   }
 
 }

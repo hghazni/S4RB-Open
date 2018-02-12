@@ -8,9 +8,9 @@
       </tr>
       </thead>
       <tbody style="display: flex; justify-content: center; flex-flow: column; align-items: center;">
-      <tr *ngFor="let post of _quarterlyArray ">
-        <td class="text-center" style="width: 15px;">{{post.Quarter}}</td>
-        <td class="text-center" style="width: 15px;">{{post.CPMU}}</td>
+      <tr *ngFor="let post of _monthlyArray " class="row">
+        <td class="text-center">{{post.Month | date}}</td>
+        <td class="text-center">{{post.CPMU}}</td>
       </tr>
       </tbody>
     </table>
