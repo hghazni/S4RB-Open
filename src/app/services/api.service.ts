@@ -13,10 +13,12 @@ console.log(Config.dbURL + '/CPMU/');
 @Injectable()
 export class ApiService {
 
-    private _url = Config.dbURL + '/CPMU/';
+  // Pulls in JSON DB location
+  private _url = Config.dbURL + '/CPMU/';
 
   constructor(private http: HttpClient) { }
 
+// Gets JSON data and returns it as an Observable Array through an Interface
   getPosts(): Observable<ComplaintInterface[]> {
     return this.http
           .get(this._url)

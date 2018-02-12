@@ -2,20 +2,14 @@
   <div class="row">
     <table class="table">
       <thead class="thead-inverse">
-      <tr>
+      <tr style="display: flex; justify-content: center;">
         <th class="text-center">Quarter</th>
-        <th class="text-center">Monthly</th>
-        <th class="text-center">Complaints</th>
-        <th class="text-center">Units Sold</th>
         <th class="text-center">CPMU</th>
       </tr>
       </thead>
-      <tbody>
-      <tr *ngFor="let post of _postsArray ">
+      <tbody style="display: flex; justify-content: center; flex-flow: column; align-items: center;">
+      <tr *ngFor="let post of _quarterlyArray ">
         <td class="text-center" style="width: 15px;">{{post.Quarter}}</td>
-        <td class="text-center" style="width: 15px;">{{post.Month}}</td>
-        <td class="text-center" style="width: 15px;">{{post.Complaints}}</td>
-        <td class="text-center" style="width: 15px;">{{post.UnitsSold}}</td>
         <td class="text-center" style="width: 15px;">{{post.CPMU}}</td>
       </tr>
       </tbody>
