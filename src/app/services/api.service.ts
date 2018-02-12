@@ -19,9 +19,9 @@ export class ApiService {
 
   getPosts(): Observable<ComplaintInterface[]> {
     return this.http
-          .get(Config.dbURL)
+          .get(this._url)
           .map((res: Response) => {
-              return <ComplaintInterface[]>res.json();
+              return res;
           })
           .catch(this.handleError);
   }
