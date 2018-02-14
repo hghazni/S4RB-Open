@@ -3,12 +3,12 @@
     <table class="table">
       <thead class="thead-inverse">
       <tr style="display: flex; justify-content: center;">
-        <th class="text-center">Quarter</th>
+        <th class="text-center">Month</th>
         <th class="text-center">CPMU</th>
       </tr>
       </thead>
       <tbody style="display: flex; justify-content: center; flex-flow: column; align-items: center;">
-      <tr *ngFor="let post of _monthlyArray " class="row">
+      <tr *ngFor="let post of _postsArray " class="row">
         <td class="text-center">{{post.Month | date}}</td>
         <td class="text-center">{{post.CPMU}}</td>
       </tr>

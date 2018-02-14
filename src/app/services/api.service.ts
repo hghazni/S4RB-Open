@@ -8,13 +8,11 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
-console.log(Config.dbURL + '/CPMU/');
-
 @Injectable()
 export class ApiService {
 
-  // Pulls in JSON DB location
-  private _url = Config.dbURL + '/CPMU/';
+    // Pulls in JSON DB location
+    private _url = Config.dbURL + '/CPMU/';
 
   constructor(private http: HttpClient) { }
 
@@ -28,9 +26,24 @@ export class ApiService {
           .catch(this.handleError);
   }
 
-// Error Handler
-private handleError(error: Response) {
-    return Observable.throw(error.statusText);
-}
+    // On subscribe returns an array of ComplaintsModel data per month
+    public CPMUData(): Observable<any> {
+        return this.http.get(this._url)
+            .map(CPMUArray => {
+                // Return data as JSON
+                return CPMUArray as Array<ComplaintsModel>;
+            })
+            .map((res: Response) => {
+                return res;
+            })
+            .catch(err => {
+                return Observable.throw(err);
+            });
+    }
+
+    // Error Handler
+    private handleError(error: Response) {
+        return Observable.throw(error.statusText);
+    }
 
 }

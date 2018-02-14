@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { ComplaintInterface } from '../interface/interface';
+import { ComplaintsService } from '../services/complaints.service';
 import { ComplaintsModel, MonthlyComplaintsModel, QuarterlyComplaintsModel } from '../models/ComplaintsModel.model';
+import { Observable } from 'rxjs/Observable';
+
 
 @Component({
   selector: 'app-complaints',
@@ -11,25 +14,29 @@ import { ComplaintsModel, MonthlyComplaintsModel, QuarterlyComplaintsModel } fro
 })
 export class ComplaintsComponent implements OnInit {
 
+
   _postsArray: Array<ComplaintsModel>;
-  _monthlyArray: Array<MonthlyComplaintsModel>;
-  _quarterlyArray: Array<QuarterlyComplaintsModel>;
+  // _monthlyArray: Array<MonthlyComplaintsModel>;
+  // _quarterlyArray: Array<QuarterlyComplaintsModel>;
 
   constructor(private apiService: ApiService) { }
 
-  // Gets Monthly CPMU
-  getMonthlyCPMU(): void {
+  public MonthlyCPMUList: Array<ComplaintsModel>;
+  public QuarterlyCPMUList: Array<ComplaintsModel>;
+
+  // Gets Monthly CPMU Data
+  getMonthlyCPMU(): Observable<ComplaintInterface[]> {
     this.apiService.getPosts()
         .subscribe(
-            resultArray => this._monthlyArray = resultArray,
+            MonthlyCPMUList => this._postsArray = MonthlyCPMUList,
             error => console.log('Error :: ' + error)
         );
   }
-  // Gets Quarterly CPMU
-  getQuarterlyCPMU(): void {
+  // Gets Quarterly CPMU Data
+  getQuarterlyCPMU(): Observable<ComplaintInterface[]> {
     this.apiService.getPosts()
         .subscribe(
-            resultArray => this._quarterlyArray = resultArray,
+            QuarterlyCPMUList => this._postsArray = QuarterlyCPMUList,
             error => console.log('Error :: ' + error)
         );
   }
@@ -37,6 +44,6 @@ export class ComplaintsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMonthlyCPMU();
-  }
 
+  }
 }
