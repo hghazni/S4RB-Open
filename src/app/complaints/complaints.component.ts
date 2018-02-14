@@ -25,7 +25,7 @@ export class ComplaintsComponent implements OnInit {
   public QuarterlyCPMUList: Array<ComplaintsModel>;
 
   // Gets Monthly CPMU Data
-  getMonthlyCPMU(): Observable<ComplaintInterface[]> {
+  getMonthlyCPMU(): void {
     this.apiService.getPosts()
         .subscribe(
             MonthlyCPMUList => this._postsArray = MonthlyCPMUList,
@@ -33,7 +33,7 @@ export class ComplaintsComponent implements OnInit {
         );
   }
   // Gets Quarterly CPMU Data
-  getQuarterlyCPMU(): Observable<ComplaintInterface[]> {
+  getQuarterlyCPMU(): void {
     this.apiService.getPosts()
         .subscribe(
             QuarterlyCPMUList => this._postsArray = QuarterlyCPMUList,
@@ -43,5 +43,6 @@ export class ComplaintsComponent implements OnInit {
 
   ngOnInit() {
     this.getMonthlyCPMU();
+    console.log(this._postsArray);
   }
 }

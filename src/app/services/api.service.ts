@@ -33,9 +33,6 @@ export class ApiService {
                 // Return data as JSON
                 return CPMUArray as Array<ComplaintsModel>;
             })
-            .map((res: Response) => {
-                return res;
-            })
             .catch(err => {
                 return Observable.throw(err);
             });
