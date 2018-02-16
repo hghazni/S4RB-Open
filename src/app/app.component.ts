@@ -12,6 +12,8 @@ import 'rxjs/add/observable/of';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
+
 export class AppComponent {
   // Observable that will connect to the post interface
   posts: Observable<any>;
