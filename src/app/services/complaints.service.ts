@@ -10,6 +10,7 @@ export class ComplaintsService{
 
   constructor(public http: HttpClient) {}
 
+  private CPMULink = Config.dbURL + '/CPMU';
 }
 
 
