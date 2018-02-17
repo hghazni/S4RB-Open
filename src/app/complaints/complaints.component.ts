@@ -30,9 +30,8 @@ export class ComplaintsComponent implements OnInit {
   // Gets Monthly CPMU Data
   getMonthlyCPMU() {
     return this.http.get(this.CPMULink)
-    // subscribes to MonthlyCPMUList as an array
-        .subscribe(MonthlyCPMUList => {
-          console.log(MonthlyCPMUList);
+    // Subscribes to MonthlyCPMUList as an array
+        .subscribe(MonthlyCPMUList => {   
           this.MonthlyCPMUList = MonthlyCPMUList;
         },
             error => console.log('Error :: ' + error),
@@ -43,11 +42,18 @@ export class ComplaintsComponent implements OnInit {
   CalculateComplaints() {
     return this.http.get(this.CPMULink)
         .subscribe(MonthlyCPMUList => {
-          this.MonthlyCPMUList.Complaints / MonthlyCPMUList.UnitsSold = MonthlyCPMUList;
+          // Loops through the Complaints Observable       
+          MonthlyCPMUList.forEach(i => {
+            // Sets the Object value of CPMU to the Complaints Per Million Units Calculation      
+           i.CPMU = ((i.Complaints) / (i.UnitsSold) * 1000000).toFixed(1);
+            console.log(i.CPMU);
+          });
+          this.MonthlyCPMUList = MonthlyCPMUList;
         },
-  }
+      }
 
   ngOnInit() {
     this.getMonthlyCPMU();
+    this.CalculateComplaints();
   }
 }
