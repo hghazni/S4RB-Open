@@ -1,18 +1,44 @@
 <div class="container">
   <div class="row">
     <table class="table">
-      <thead class="thead-inverse">
-      <tr style="display: flex; justify-content: center;">
-        <th class="text-center">Month</th>
-        <th class="text-center">CPMU</th>
-      </tr>
-      </thead>
-      <tbody style="display: flex; justify-content: center; flex-flow: column; align-items: center;">
+
+
+  <!-- CPMU Data Toggle Switch -->
+  <div class="switch">
+    <label>
+      Monthly
+      <input type="checkbox" id="CPMUDataToggle" (change)="toggleData(event)">
+      <span class="lever"></span>
+      Quarterly
+    </label>
+  </div>
+      
+
+    <div class="Complaints__Terminal-window">
+        <thead class="thead-inverse">
+            <tr style="display: flex; justify-content: center;">
+              <th class="text-center" id="monthLabel">Month</th>
+              <th class=text-center id="quarterLabel">Quarter</th>
+              <th class="text-center">CPMU</th>
+            </tr>
+          </thead>
+      <!-- Monthly CPMU -->
+      <tbody id="MonthlyCPMU" style="display: flex; justify-content: center; flex-flow: column; align-items: center;">
       <tr *ngFor="let post of MonthlyCPMUList" class="row">
         <td class="text-center">{{post.Month | date}}</td>
         <td class="text-center">{{post.CPMU}}</td>
       </tr>
       </tbody>
+
+      <!-- Quarterly CPMU -->
+      <tbody id="QuarterlyCPMU" style="display: flex; justify-content: center; flex-flow: column; align-items: center;">
+        <tr *ngFor="let post of QuarterlyCPMUList" class="row">
+          <td class="text-center">{{post.Quarter}}</td>
+          <td class="text-center">{{post.CPMU}}</td>
+        </tr>
+        </tbody>
+      </div>
     </table>
   </div>
 </div>
+
