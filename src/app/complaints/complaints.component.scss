@@ -1,3 +1,6 @@
+/*=======================
+   SWITCH
+=======================*/
 // Quarterly and Monthly Data Toggle Switch
 .switch {
     label {
@@ -10,6 +13,9 @@
     }
 }
 
+/*=======================
+   TERMINAL
+=======================*/
 // Terminal Window
 .Complaints__Terminal-window {
     background-color: rgba(25,25,25,0.8);
@@ -26,22 +32,21 @@
     }
 }
 
-.quarterColumn {
-    width: 5rem;
-    text-align: center;
-}
-.cpmuColumn {
-    width: 4rem;
-    text-align: center;
-}
-
+// Quarter Column
+.quarterColumn { width: 5rem; text-align: center; }
+// CPMU Column
+.cpmuColumn { width: 4rem; text-align: center; }
 // Month Label
-#monthLabel {
-    width: 6rem;
-    // color: darksalmon;
-}
-
+#monthLabel { width: 6rem; }
 // CPMU Label
-#cpmuLabel {
-    // color: darkorange;
+#cpmuLabel {}
+
+/*=======================
+   FOOTER
+=======================*/
+// Complaints Footer Container
+.Complaints__Footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }

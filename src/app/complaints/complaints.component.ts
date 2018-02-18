@@ -48,8 +48,9 @@ export class ComplaintsComponent implements OnInit {
     const QuarterlyCPMU = <HTMLBodyElement> document.getElementById('QuarterlyCPMU');
     const QuarterLabel = <HTMLBodyElement> document.getElementById('quarterLabel');
     const MonthLabel = <HTMLBodyElement> document.getElementById('monthLabel');
-    //grab event from dropdown/button/switch
+    // Grabs event from switch
     let isChecked = CPMUDataSwitch.checked;
+    // Checks the checkboxes state
       if (isChecked == true) {
         // Toggles Quarterly Data
         MonthlyCPMU.style.display = 'none';
@@ -65,8 +66,7 @@ export class ComplaintsComponent implements OnInit {
         // Toggles Monthly Label
         MonthLabel.style.display = 'block';
         QuarterLabel.style.display = 'none';
-      }
-    
+      } 
   }
 
   // Calculates the Monthly Complaints Per Million Units 
@@ -92,8 +92,13 @@ export class ComplaintsComponent implements OnInit {
             // Loops through the Complaints Observable       
             QuarterlyCPMUList.forEach(i => {
               // Sets the Object value of CPMU to the Complaints Per Million Units Calculation      
-             i.CPMU = ((i.Complaints) / (i.UnitsSold) * 1000000).toFixed(1);
-              // console.log(i.CPMU + ' ' + 'Quarterly CPMU');
+             i.Quarter = (Object.values(i.Quarter).map(Number));
+             return i.Quarter = parseInt(i.Quarter),
+             // Gets Quarters in a month
+             console.log(i.Quarter + ' ' + 'Quarter'),
+             // Formats Yearly data only from the Monthly JSON Timestamps
+             i.Month = moment(i.Month).format('YY'),
+             console.log('Year ' + 20 + i.Month);
             });
             this.QuarterlyCPMUList = QuarterlyCPMUList;
           },
