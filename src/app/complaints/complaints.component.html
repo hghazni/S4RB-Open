@@ -26,15 +26,15 @@
       <tbody id="MonthlyCPMU" style="display: flex; justify-content: center; flex-flow: column; align-items: center;">
       <tr *ngFor="let post of MonthlyCPMUList" class="row">
         <td class="text-center">{{post.Month | date}}</td>
-        <td class="text-center">{{post.CPMU}}</td>
+        <td class="text-center cpmuColumn">{{post.CPMU}}</td>
       </tr>
       </tbody>
 
       <!-- Quarterly CPMU -->
       <tbody id="QuarterlyCPMU" style="display: flex; justify-content: center; flex-flow: column; align-items: center;">
         <tr *ngFor="let post of QuarterlyCPMUList" class="row">
-          <td class="text-center">{{post.Quarter}}</td>
-          <td class="text-center">{{post.CPMU}}</td>
+          <td class="text-center quarterColumn">{{post.Quarter}}</td>
+          <td class="text-center cpmuColumn">{{post.CPMU}}</td>
         </tr>
         </tbody>
       </div>
