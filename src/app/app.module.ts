@@ -3,18 +3,21 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
+import { ToggleComponent } from './toggle/toggle.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ComplaintsComponent
+    ComplaintsComponent,
+    ToggleComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

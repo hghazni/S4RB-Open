@@ -4,4 +4,5 @@ export class ComplaintsModel {
     public Complaints: number;
     public UnitsSold: number;
     public CPMU: number;
+    public CPMUAverage: number;
 }

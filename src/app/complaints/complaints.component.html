@@ -2,15 +2,7 @@
   <div class="row">
     <table class="table">
 
-  <!-- CPMU Data Toggle Switch -->
-  <div class="switch">
-    <label>
-      Monthly
-      <input type="checkbox" id="CPMUDataToggle" (change)="toggleData(event)">
-      <span class="lever"></span>
-      Quarterly
-    </label>
-  </div>
+<app-toggle></app-toggle>
 
     <div class="Complaints__Terminal-window">
         <thead class="thead-inverse">
@@ -30,10 +22,15 @@
 
       <!-- Quarterly CPMU -->
       <tbody id="QuarterlyCPMU" style="display: flex; justify-content: center; flex-flow: column; align-items: center;">
-        <tr *ngFor="let post of QuarterlyCPMUList" class="row">
-          <td class="text-center quarterColumn">{{post.Quarter}}</td>
-          <td class="text-center cpmuColumn">{{post.CPMU}}</td>
+        
+      
+        <tr *ngFor="let quarter of MonthlyCPMUList" class="row">
+          <td class="text-center yearColumn">Year</td>
+          <td class="text-center quarterColumn">Quarter</td>
+          <td class="text-center cpmuColumn">CPMU</td>
         </tr>
+      
+      
         </tbody>
       </div>
     </table>
@@ -41,6 +38,6 @@
 </div>
 
 <div class="Complaints__Footer">
-  <p>By Haroon Ghazni - for the S4RB Javascript Test</p>
+  <p>By <a href="http://www.hghazni.com">Haroon Ghazni</a> - for the S4RB Javascript Test</p>
 </div>
 
