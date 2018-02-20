@@ -1,7 +1,7 @@
 # CPMU - Complaints Per Million Units
 
 
-By Haroon Ghazni
+[By Haroon Ghazni](https://www.hghazni.com)
 
 This is my **WIP** project for S4RB. An app that essentially calculates the **CPMU (Complaints Per Million Units)** in monthly and quarterly figures. For the Front End I'm using **Angular 5**, **Materialze** and **SCSS**. For the Back End I'm utilising the **JSON REST API** Database which I'll be communicating with using **basic ES6 JavaScript/TypeScript** and **ReactveX**. I also used plugins such as **Moment.js** to help sort the Timestamps into useable dates for Monthly (MM, YYYY) and Quarterly (YYYY).
 
