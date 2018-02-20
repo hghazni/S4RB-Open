@@ -20,29 +20,23 @@ import { ToggleComponent } from '../toggle/toggle.component';
 
 export class ComplaintsComponent implements OnInit {
 
-  // CPMUList Array Model
-  _postsArray: Array<ComplaintsModel>;
-
   constructor(public http: HttpClient) { }
 
   // Link to CPMU JSON Database
   private CPMULink = Config.dbURL + '/CPMU/';
-  public complaintYears: Array<string>;
   public quarters = Config.quarters;
   public QuarterlyCPMUList = Object;
   public CPMUQuarterData: Array<ComplaintsModel>;
-  private ngUnsubscribe: Subject<void> = new Subject<void>();
-  public QuarterCPMUstat;
 
 /**============================
 * Gets Monthly CPMU Data
 ========================*/
   public getMonthlyCPMU() {
-    return this.http.get(this.CPMULink)
+    return this.http.get(this.MonthlyCPMUList)
     // Subscribes to MonthlyCPMUList as an array
-        .subscribe(CPMUList => {   
+        .subscribe(MonthlyCPMUList => {   
           // Returns the response as an Observable
-          this.CPMUList = CPMUList;
+          this.MonthlyCPMUList = MonthlyCPMUList;
         },
             error => console.log('Error :: ' + error),
         );
@@ -64,7 +58,7 @@ export class ComplaintsComponent implements OnInit {
           });
           this.MonthlyCPMUList = MonthlyCPMUList;
         }
-      },
+      }
 
   /**============================
   * Calculate Quarterly Complaint Calculations
@@ -133,17 +127,16 @@ export class ComplaintsComponent implements OnInit {
                   Quarter = CPMUQuarterData[year][quarter][i].Quarter,
                   QuarterYear = CPMUQuarterData[year][quarter][i].Month;
 
-                  // console.log(Quarter)
-                  // console.log(QuarterYear)
-
                 /**============================
                 * Calling and organising the Quarterly data 
                 ========================*/
-                  for (let i = 0; i < 0; i++){
-                  console.log(CPMUQuarterData[i][i].CPMUAverage)
-                  }
-        
-                  QuarterlyCPMUList = CPMUQuarterData;
+                  /**
+                   * 
+                   * Organising Quarterly Data to go into the view later.
+                   * This code will only output to the view Unique values rather than repeating years or quarters for the same node.
+                   * 
+                   */
+                  // Shows the CPMU Average and Quarterly nodes arranged by year > quarters
                   console.log(CPMUQuarterData)
                 }
               })
