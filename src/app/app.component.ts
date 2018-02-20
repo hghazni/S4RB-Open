@@ -1,11 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Config } from './Config';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/retry';
-import 'rxjs/add/observable/of';
 
 @Component({
   selector: 'app-root',
@@ -15,16 +8,5 @@ import 'rxjs/add/observable/of';
 
 
 export class AppComponent {
-  // Observable that will connect to the post interface
-  posts: Observable<any>;
-  newPost: Observable<any>;
-
-  constructor(public http: HttpClient) {}
-
-  // Gets CPMU JSON data from Config.ts
-  getPosts() {
-    // Getting a new instance of the class to accommodate for dynamic parameters in the future
-    let params = new HttpParams().set('Quarter', '1');
-    this.posts = this.http.get(Config.dbURL + '/CPMU' , { params });
-  }
+  constructor() {}
 }

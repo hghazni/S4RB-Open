@@ -47,7 +47,6 @@ toggleData(event) {
 }
   ngOnInit() {
     this.toggleData(event);
-    console.log('braaap')
   }
 
 }

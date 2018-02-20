@@ -22,15 +22,13 @@
 
       <!-- Quarterly CPMU -->
       <tbody id="QuarterlyCPMU" style="display: flex; justify-content: center; flex-flow: column; align-items: center;">
-        
-      
-        <tr *ngFor="let quarter of MonthlyCPMUList" class="row">
-          <td class="text-center yearColumn">Year</td>
-          <td class="text-center quarterColumn">Quarter</td>
-          <td class="text-center cpmuColumn">CPMU</td>
+
+        <tr *ngFor="let quarter of QuarterlyCPMUList" class="row">
+          <td class="text-center yearColumn">{{quarter.Month}}</td>
+          <td class="text-center quarterColumn">{{quarter.Quarter}}</td>
+          <td class="text-center cpmuColumn">{{quarter.CPMUAverage}}</td>
         </tr>
-      
-      
+            
         </tbody>
       </div>
     </table>
