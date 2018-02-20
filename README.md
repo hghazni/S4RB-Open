@@ -5,6 +5,8 @@
 
 This is my **WIP** project for S4RB. An app that essentially calculates the **CPMU (Complaints Per Million Units)** in monthly and quarterly figures. For the Front End I'm using **Angular 5**, **Materialze** and **SCSS**. For the Back End I'm utilising the **JSON REST API** Database which I'll be communicating with using **basic ES6 JavaScript/TypeScript** and **ReactveX**. I also used plugins such as **Moment.js** to help sort the Timestamps into useable dates for Monthly (MM, YYYY) and Quarterly (YYYY).
 
+![Example Reporting Porta](/example-2.png "Example Reporting Portal")
+
 There are error handlers built into the app but I've not yet implented Unit testing. There is however **End-to-End testing** in the form of **Karma Jasmine**. Due it being native it's quite at making suggestions as well as catching errors. 
 
 > Just to note that though this project isn't 'completley' finished due to time constraints. Had I had enough time I would have implemented the Quarterly CPMU calculations that I've correctly calculated into the view. Then proceeded to do the final bit which is the 'missing months' calculation. Which is the only real thing missing from this project...However I feel this gives an accurate representation of my confidence in tackling new frameworks, technologies and picking up new programming methodologies in a short space of time.
