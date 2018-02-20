@@ -66,27 +66,6 @@ export class ComplaintsComponent implements OnInit {
         }
       },
 
-      private getMissingMonths(QuarterlyCPMUList){
-        // Set start and end dates
-        let currentDate = QuarterlyCPMUList[0].Month;
-        let lastDate = QuarterlyCPMUList[QuarterlyCPMUList.length - 1].Month;
-    
-        // Loops through every month between start and end date and pushes any missing months
-        for(let i = 0; moment(currentDate).format('DDMMYYYY') != moment(lastDate).add(1, 'month').format('DDMMYYYY'); i++){
-          if(moment(QuarterlyCPMUList[i].Month).format('DDMMYYYY') != moment(currentDate).format('DDMMYYYY')){
-            let quarter = this.getQuarter(moment(currentDate));
-            QuarterlyCPMUList.splice(i, 0, {Quarter: quarter, Month: moment(currentDate).format('DD MMMM YYYY'), Complaints: 0, UnitsSold: 0, CPMU: 0});
-          }
-          // Format existing months
-          if(QuarterlyCPMUList[i].CPMU != 0){
-            QuarterlyCPMUList[i].Month = moment(QuarterlyCPMUList[i].Month).format('DD MMMM YYYY');
-          }
-          currentDate = moment(QuarterlyCPMUList[i].Month).add(1, 'month').startOf('month').toISOString();
-        }
-    
-        return QuarterlyCPMUList;
-      }
-
   /**============================
   * Calculate Quarterly Complaint Calculations
   ========================*/
