@@ -28,6 +28,14 @@
           <td class="text-center quarterColumn">{{quarter.Quarter}}</td>
           <td class="text-center cpmuColumn">{{quarter.CPMUAverage}}</td>
         </tr>
+
+        <ng-container *ngFor="let year of Year">
+            <li *ngFor="let quarter of year.Quarters; let i = index">
+              <div class="product__year"><span *ngIf="i == 0">{{year.Year}}</span></div>
+              <div class="product__date">{{quarter.Quarter}}</div>
+              <div class="product__cpmu">{{quarter.CPMU | number:'1.8'}}</div>
+            </li>
+          </ng-container> 
             
         </tbody>
       </div>

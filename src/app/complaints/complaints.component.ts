@@ -58,7 +58,7 @@ export class ComplaintsComponent implements OnInit {
           });
           this.MonthlyCPMUList = MonthlyCPMUList;
         }
-      }
+      },
 
   /**============================
   * Calculate Quarterly Complaint Calculations
