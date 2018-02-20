@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Response } from '@angular/http';
-import { ComplaintInterface } from '../interface/interface';
 import { Config } from '../Config';
 import { ComplaintsModel } from '../models/ComplaintsModel.model';
 import { Observable } from 'rxjs/Observable';
@@ -17,7 +16,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
 // Gets JSON data and returns it as an Observable Array through an Interface
-  getPosts(): Observable<ComplaintInterface[]> {
+  getPosts(): Observable<ComplaintsModel[]> {
     return this.http
           .get(this._url)
           .map((res: Response) => {
