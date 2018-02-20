@@ -13,6 +13,10 @@ There are error handlers built into the app but I've not yet implented Unit test
 
 There is a lot of refinement that could go into this. Larger functions could be broken down. Quite a few methods could be implemented in Services that could be fed into components. I could implement more Unit tests and try out **'Protractor'** for End to End testing.
 
+## JSON REST Server
+
+Run `json-server --watch db.json` to start JSON DB on `http://localhost:3000/`.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
